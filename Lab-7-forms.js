@@ -22,18 +22,23 @@ window.onload = function () {
   function processForm() {
     let nameValue = formHandle.f_Name;
     console.log(nameValue.value);
+    shipInfo["name"] = nameValue.value;
 
     let idValue = formHandle.f_Id;
     console.log(idValue.value);
+    shipInfo["cid"] = idValue.value;
 
     let postCodeValue = formHandle.f_pc;
     console.log(postCodeValue.value);
+    shipInfo["pc"] = postCodeValue.value;
 
     let speedValue = speedF.options[speedF.selectedIndex].text;
     console.log(speedValue);
+    shipInfo["speed"] = speedValue;
 
     let costValue = formHandle.f_speed;
     console.log(costValue.value);
+    shipInfo["cost"] = `$${costValue.value}`;
 
     //SHIPPING LEVEL
 
@@ -72,7 +77,7 @@ window.onload = function () {
       thanksSpeed.innerHTML = speedValue;
       thanksCost.innerHTML = costValue.value;
     }
-
+    console.log(shipInfo);
     return false;
   }
 };
